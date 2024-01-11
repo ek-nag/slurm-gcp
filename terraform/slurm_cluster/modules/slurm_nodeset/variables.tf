@@ -116,6 +116,20 @@ variable "reservation_name" {
   default     = null
 }
 
+variable "maintenance_interval" {
+  description = <<-EOD
+    Sets the maintenance interval for instances in this nodeset.
+    See https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance#maintenance_interval.
+  EOD
+  type        = string
+  default     = null
+
+  validation {
+    condition     = try(contains(["PERIODIC"], var.maintenance_interval), true)
+    error_message = "Allowed values for maintenance_interval are \"PERIODIC\" or omitted (null)."
+  }
+}
+
 variable "enable_placement" {
   description = <<-EOD
     Enables compact placement policy for instances.
