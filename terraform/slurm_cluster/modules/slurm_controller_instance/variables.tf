@@ -148,3 +148,9 @@ EOD
   default   = null
   sensitive = true
 }
+
+variable "suffix" {
+  description = "Controller name suffix."
+  type        = string
+  default     = "controller"
+}

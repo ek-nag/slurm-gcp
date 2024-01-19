@@ -56,7 +56,7 @@ module "slurm_controller_instance" {
 
   access_config       = var.enable_public_ip ? [local.access_config] : []
   add_hostname_suffix = false
-  hostname            = "${var.slurm_cluster_name}-controller"
+  hostname            = "${var.slurm_cluster_name}-controller-${var.suffix}"
   instance_template   = var.instance_template
   network             = var.network
   num_instances       = var.num_instances
