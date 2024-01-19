@@ -82,6 +82,12 @@ variable "network_tier" {
   }
 }
 
+variable "num_instances" {
+  type        = number
+  description = "Number of instances to create. This value is ignored if static_ips is provided."
+  default     = 1
+}
+
 variable "zone" {
   type        = string
   description = <<EOD

@@ -105,6 +105,7 @@ EOD
     min_cpu_platform    = optional(string)
     network_ip          = optional(string)
     network_tier        = optional(string, "STANDARD")
+    num_instances       = optional(number, 1)
     on_host_maintenance = optional(string)
     preemptible         = optional(bool, false)
     region              = optional(string)

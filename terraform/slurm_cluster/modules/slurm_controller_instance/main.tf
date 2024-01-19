@@ -59,6 +59,7 @@ module "slurm_controller_instance" {
   hostname            = "${var.slurm_cluster_name}-controller"
   instance_template   = var.instance_template
   network             = var.network
+  num_instances       = var.num_instances
   project_id          = var.project_id
   region              = local.region
   slurm_cluster_name  = var.slurm_cluster_name

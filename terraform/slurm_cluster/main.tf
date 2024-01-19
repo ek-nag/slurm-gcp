@@ -323,6 +323,7 @@ module "slurm_controller_instance" {
   enable_public_ip   = var.controller_instance_config.enable_public_ip
   instance_template  = local.have_template ? var.controller_instance_config.instance_template : module.slurm_controller_template[0].self_link
   network_tier       = var.controller_instance_config.network_tier
+  num_instances      = each.value.num_instances
   project_id         = var.project_id
   region             = var.controller_instance_config.region
   slurm_cluster_name = var.slurm_cluster_name
